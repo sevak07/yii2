@@ -11,6 +11,9 @@ AppAsset::register($this);
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- <?= Html::csrfMetaTags() ?> -->
+
 	<title></title>
 <?php $this->head() ?>
 </head>
