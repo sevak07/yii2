@@ -1,6 +1,1 @@
-<h2>Privet</h2>
-<?php 
-
-debug(Yii::$app);
-
- ?>
+<h2>Show Article</h2>
