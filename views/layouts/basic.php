@@ -14,7 +14,7 @@ AppAsset::register($this);
 	
 	<!-- <?= Html::csrfMetaTags() ?> -->
 
-	<title></title>
+	<title><?= $this->title ?></title>
 <?php $this->head() ?>
 </head>
 <body>
@@ -23,12 +23,15 @@ AppAsset::register($this);
 	<div class="wrap">
 		<div class="container">
 			<ul class="nav nav-tabs">
-			    <li role="presentation" class="active"><?= Html::a('Main', '/web/') ?></li>
+			    <li role="presentation" class="active"><?= Html::a('Main', 'index.php') ?></li>
 			    <li role="presentation"><?= Html::a('Articles', ['post/index']) ?></li>
 			    <li role="presentation"><?= Html::a('Article', ['post/show']) ?></li>
 			</ul>
 		</div>
 		<div class="container">        
+		<?php if( isset($this->blocks['block1'])) { 
+			echo $this->blocks['block1'];
+		} ?>
 	        <?= $content ?>
 	    </div>
 	</div>

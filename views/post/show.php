@@ -1,3 +1,11 @@
+<?php 
+// $this->title = "One Article" 
+?>
+
+<?php $this->beginBlock('block1') ?>
+<h1>Heading</h1>
+<?php $this->endBlock() ?>
+
 <h1>Show Articles</h1>
 
 <button class="btn btn-success" id="btn">Click Me</button>

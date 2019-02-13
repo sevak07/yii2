@@ -26,6 +26,7 @@ class PostController extends AppController{
 
 	public function actionShow(){
 		// $this->layout = "basic";
+		$this->view->title = "One Article";
 		return $this->render("show");
 	}
 }
