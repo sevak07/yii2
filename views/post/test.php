@@ -10,7 +10,7 @@ use yii\helpers\Html;
 ?>
 
 <?php $form = ActiveForm::begin(['options' => ['id' => 'testForm']]) ?>
-	<?= $form->field($model, 'name')->label('Name')->passwordInput(); ?>
+	<?= $form->field($model, 'name')->label('Name'); ?>
 	<?= $form->field($model, 'email')->input('email') ?>
 	<?= $form->field($model, 'text')->textarea(["rows" => 5]) ?>
 	<?= $form->field($model, 'checkbox')->checkbox() ?>
