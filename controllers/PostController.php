@@ -2,13 +2,13 @@
 
 namespace app\controllers;
 use Yii;
+use app\models\TestForm;
 
 class PostController extends AppController{
 
 	public $layout = 'basic';
 
 	public function beforeAction($action){
-		// debug($action);
 		if( $action->id == "index"){
 			$this->enableCsrfValidation = false;
 		}
@@ -18,10 +18,12 @@ class PostController extends AppController{
 	public function actionIndex(){
 		if(Yii::$app->request->isAjax) {
 			debug(Yii::$app->request->post());
-			// debug($_POST);
 			return 'test';
 		}
-		return $this->render("test");
+
+		$model = new TestForm();
+
+		return $this->render("test", compact('model') );
 	}
 
 	public function actionShow(){
