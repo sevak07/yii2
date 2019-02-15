@@ -26,12 +26,12 @@ class TestForm extends Model {
 			// ['name' ,'string', 'max' => 10, 'tooLong' => '10 taric avel chpiti lini']
 			['name', 'string', 'length' => [2,5]],
 			['name', 'myRule'],
-			['text', 'trim']
+			['text', 'safe']
 		];
 	}
 
 	public function myRule($attr){
-		if(in_array($this->attr, ['Web', 'USA'])){
+		if( !in_array($this->$attr, ['Web', 'USA']) ){
 			$this->addError($attr, 'Name must be Web or USA');
 		}
 	}
