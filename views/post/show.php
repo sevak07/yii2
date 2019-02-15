@@ -8,6 +8,8 @@
 
 <h1>Show Articles</h1>
 
+<?php debug($cats); ?>
+
 <button class="btn btn-success" id="btn">Click Me</button>
 
 

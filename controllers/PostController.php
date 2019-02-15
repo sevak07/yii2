@@ -3,6 +3,7 @@
 namespace app\controllers;
 use Yii;
 use app\models\TestForm;
+use app\models\Category;
 
 class PostController extends AppController{
 
@@ -38,6 +39,9 @@ class PostController extends AppController{
 	public function actionShow(){
 		// $this->layout = "basic";
 		$this->view->title = "One Article";
-		return $this->render("show");
+
+		$cats = Category::find()->all();
+
+		return $this->render("show", compact('cats'));
 	}
 }
