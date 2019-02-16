@@ -3,6 +3,7 @@
 namespace app\controllers;
 use Yii;
 use app\models\TestForm;
+use app\models\TestForm2;
 use app\models\Category;
 
 class PostController extends AppController{
@@ -22,9 +23,15 @@ class PostController extends AppController{
 			return 'test';
 		}
 
-		$model = new TestForm();
+		// $model = new TestForm();
+		$model = new TestForm2();
+		// $model->name = 'Hexinak';
+		// $model->email = 'hexinak@mail.ru';
+		// $model->text = 'barev dzezi';
+		// $model->save();
+
 		if($model->load(Yii::$app->request->post())){
-			if($model->validate()){
+			if($model->save()){
 				Yii::$app->session->setFlash('success', 'Data accepted');
 				return $this->refresh();
 			} else {

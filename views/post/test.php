@@ -32,6 +32,5 @@ use yii\helpers\Html;
 	<?= $form->field($model, 'name')->label('Name'); ?>
 	<?= $form->field($model, 'email')->input('email') ?>
 	<?= $form->field($model, 'text')->textarea(["rows" => 5]) ?>
-	<?= $form->field($model, 'checkbox')->checkbox() ?>
 	<?= Html::submitButton('Send', ['class' => 'btn btn-success']) ?>
 <?php ActiveForm::end() ?>
