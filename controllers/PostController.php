@@ -30,6 +30,15 @@ class PostController extends AppController{
 		// $model->text = 'barev dzezi';
 		// $model->save();
 
+		// $post = TestForm2::findOne(3);
+		// $post->email = 'a202@mail.ru';
+		// $post->save();
+
+		// $post->delete();
+
+		// TestForm2::deleteAll(['>', 'id', 3]);
+		// TestForm2::deleteAll();
+
 		if($model->load(Yii::$app->request->post())){
 			if($model->save()){
 				Yii::$app->session->setFlash('success', 'Data accepted');
