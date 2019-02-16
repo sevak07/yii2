@@ -1,12 +1,20 @@
 <?php 
+
+use app\components\MyWidget;
 // $this->title = "One Article" 
 ?>
+
 
 <?php $this->beginBlock('block1') ?>
 <h1>Heading</h1>
 <?php $this->endBlock() ?>
 
 <h1>Show Articles</h1>
+
+<?php //echo MyWidget::widget(['name' => 'Sevak']); ?>
+<?php MyWidget::begin() ?>
+	<h1>Hello World</h1>
+<?php MyWidget::end() ?>
 
 <?php /* foreach ($cats as $cat) {
 	echo $cat->title.'<br>';
@@ -18,17 +26,18 @@
 // debug($cats);
 ?>
 
-<?php foreach ($cats as $cat) {
-	echo '<ul>';
-		echo '<li>' .$cat->title. '</li>';
-		$products = $cat->products;
-		foreach ($products as $product) {
-			echo '<ul>';
-				echo '<li>' .$product->title. '</li>';
-			echo '</ul>';
-		}
-	echo '</ul>';
-} ?>
+<?php 
+// foreach ($cats as $cat) {
+// 	echo '<ul>';
+// 		echo '<li>' .$cat->title. '</li>';
+// 		$products = $cat->products;
+// 		foreach ($products as $product) {
+// 			echo '<ul>';
+// 				echo '<li>' .$product->title. '</li>';
+// 			echo '</ul>';
+// 		}
+// 	echo '</ul>';
+// } ?>
 
 <button class="btn btn-success" id="btn">Click Me</button>
 
