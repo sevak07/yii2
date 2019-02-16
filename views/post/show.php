@@ -8,7 +8,13 @@
 
 <h1>Show Articles</h1>
 
-<?php debug($cats); ?>
+<?php /* foreach ($cats as $cat) {
+	echo $cat->title.'<br>';
+} */ ?>
+
+<?php
+debug($cats);
+?>
 
 <button class="btn btn-success" id="btn">Click Me</button>
 

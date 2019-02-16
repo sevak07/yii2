@@ -40,7 +40,23 @@ class PostController extends AppController{
 		// $this->layout = "basic";
 		$this->view->title = "One Article";
 
-		$cats = Category::find()->all();
+		// $cats = Category::find()->all();
+		// $cats = Category::find()->orderBy(['id' => SORT_DESC])->all();
+		// $cats = Category::find()->asArray()->orderBy(['id' => SORT_DESC])->all();
+		// $cats = Category::find()->asArray()->where('parent=4')->all();
+		// $cats = Category::find()->asArray()->where(['parent' => 4])->all();
+		// $cats = Category::find()->asArray()->where(['like', 'title', 'ew'])->all();
+		// $cats = Category::find()->asArray()->where(['<=', 'id', 3])->all();
+		// $cats = Category::find()->asArray()->where('parent=2')->limit(1)->all();
+		// $cats = Category::find()->asArray()->where('parent=2')->one();
+		// $cats = Category::find()->asArray()->where('parent=2')->count();
+		// $cats = Category::find()->asArray()->count();
+		// $cats = Category::findOne(['parent' => 2]);
+		// $cats = Category::findAll(['parent' => 2]);
+		// $query = "SELECT * FROM categories WHERE title LIKE '%ew%'";   sxal a
+		// $cats = Category::findBySql($query)->all();
+		$query = "SELECT * FROM categories WHERE title LIKE :search";   
+		$cats = Category::findBySql($query, [':search' => '%ew%'])->all();
 
 		return $this->render("show", compact('cats'));
 	}
