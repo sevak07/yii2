@@ -55,8 +55,12 @@ class PostController extends AppController{
 		// $cats = Category::findAll(['parent' => 2]);
 		// $query = "SELECT * FROM categories WHERE title LIKE '%ew%'";   sxal a
 		// $cats = Category::findBySql($query)->all();
-		$query = "SELECT * FROM categories WHERE title LIKE :search";   
-		$cats = Category::findBySql($query, [':search' => '%ew%'])->all();
+		// $query = "SELECT * FROM categories WHERE title LIKE :search";   
+		// $cats = Category::findBySql($query, [':search' => '%ew%'])->all();
+		// $cats = Category::findOne(1);
+		// $cats = Category::find()->with('products')->where('id=1')->all();
+		// $cats = Category::find()->all();  //lenivaya ili otlojennaya
+		$cats = Category::find()->with('products')->all();  // jadnaya zagruzka dannix
 
 		return $this->render("show", compact('cats'));
 	}

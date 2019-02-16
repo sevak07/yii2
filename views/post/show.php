@@ -13,8 +13,22 @@
 } */ ?>
 
 <?php
-debug($cats);
+// debug($cats);
+// echo count($cats[0]->products);
+// debug($cats);
 ?>
+
+<?php foreach ($cats as $cat) {
+	echo '<ul>';
+		echo '<li>' .$cat->title. '</li>';
+		$products = $cat->products;
+		foreach ($products as $product) {
+			echo '<ul>';
+				echo '<li>' .$product->title. '</li>';
+			echo '</ul>';
+		}
+	echo '</ul>';
+} ?>
 
 <button class="btn btn-success" id="btn">Click Me</button>
 
