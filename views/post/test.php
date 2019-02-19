@@ -1,6 +1,7 @@
 <?php
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
+use mihaildev\ckeditor\CKEditor;
 ?>
 
 <h2>Show Article</h2>
@@ -33,4 +34,12 @@ use yii\helpers\Html;
 	<?= $form->field($model, 'email')->input('email') ?>
 	<?= $form->field($model, 'text')->textarea(["rows" => 5]) ?>
 	<?= Html::submitButton('Send', ['class' => 'btn btn-success']) ?>
+	<?php 
+		echo $form->field($model, 'text')->widget(CKEditor::className(),[
+		    'editorOptions' => [
+		        'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+		        'inline' => false, //по умолчанию false
+		    ],
+		]);
+	 ?>
 <?php ActiveForm::end() ?>
